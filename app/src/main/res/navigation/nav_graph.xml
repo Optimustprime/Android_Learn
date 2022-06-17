@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/roadmapFragment">
+    <fragment
+        android:id="@+id/roadmapFragment"
+        android:name="com.optiapp.androidlearn.Fragments.RoadmapFragment"
+        android:label="Road Map"
+        tools:layout="@layout/fragment_roadmap">
+        <action
+            android:id="@+id/action_roadMapFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_roadmapFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_roadmapFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.optiapp.androidlearn.Fragments.DetailsFragment"
+        android:label="About Course"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="letter"
+            android:defaultValue="0"
+            app:argType="string" />
+        <argument
+            android:name="code"
+            android:defaultValue="2"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.optiapp.androidlearn.Fragments.contactFragment"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact">
+        <argument
+            android:name="code"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.optiapp.androidlearn.Fragments.aboutFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about" />
+</navigation>
